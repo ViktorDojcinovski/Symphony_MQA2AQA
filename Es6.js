@@ -18,12 +18,14 @@
 function Person(name, age) {
   // Adding properties,
   // that will be inherited by every instance.
+  // Pease investigate the ***this*** keyword and ***context*** of it!
   this.name = name;
   this.age = age;
 }
 
 // Adding a method to the Person prototype
 Person.prototype.sayHello = function () {
+  // Investigate the topic of ***template literals***!
   console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
 };
 
@@ -35,3 +37,38 @@ const person2 = new Person("Bob", 25);
 
 person1.sayHello(); // Output: Hello, my name is Alice and I am 30 years old.
 person2.sayHello(); // Output: Hello, my name is Bob and I am 25 years old.
+
+// Homework assignemnt
+/**
+ * Convert the following code into ES6 syntax and create few instances!
+ */
+
+function Computer(manufacturer, model) {
+  this.manufacturer = manufacturer;
+  this.model = model;
+  this.isPoweredOn = false;
+}
+
+Computer.prototype.powerOn = function () {
+  if (!this.isPoweredOn) {
+    this.isPoweredOn = true;
+    // Please pay attention on operation adding implemented on string!
+    // Investigate the topic - Operations in JavaScript!
+    console.log(this.manufacturer + " " + this.model + " is now powered on.");
+  } else {
+    console.log(
+      this.manufacturer + " " + this.model + " is already powered on."
+    );
+  }
+};
+
+Computer.prototype.powerOff = function () {
+  if (this.isPoweredOn) {
+    this.isPoweredOn = false;
+    console.log(this.manufacturer + " " + this.model + " is now powered off.");
+  } else {
+    console.log(
+      this.manufacturer + " " + this.model + " is already powered off."
+    );
+  }
+};
