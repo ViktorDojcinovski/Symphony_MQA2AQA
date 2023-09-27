@@ -18,12 +18,14 @@
 function Person(name, age) {
   // Adding properties,
   // that will be inherited by every instance.
+  // Pease investigate the ***this*** keyword and ***context*** of it!
   this.name = name;
   this.age = age;
 }
 
 // Adding a method to the Person prototype
 Person.prototype.sayHello = function () {
+  // Investigate the topic of ***template literals***!
   console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
 };
 
