@@ -53,8 +53,8 @@ class ModernAudio {
 
 // AudioAdapter class
 class AudioAdapter {
-  constructor() {
-    this.oldAudio = new OldAudio();
+  constructor(oldAudio) {
+    this.oldAudio = oldAudio;
   }
 
   playAudio() {
@@ -64,7 +64,7 @@ class AudioAdapter {
 
 // Usage
 const audio = new ModernAudio();
-const adapter = new AudioAdapter();
+const adaptedAudio = new AudioAdapter(new OldAudio());
 
 audio.playAudio(); // Output: Playing audio using the modern Web Audio API
-adapter.playAudio(); // Output: Playing audio using the old API
+adaptedAudio.playAudio(); // Output: Playing audio using the old API
